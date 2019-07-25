@@ -1,0 +1,24 @@
+source MIN.G.inp
+
+set outputname MIN.4;
+
+outputname     $outputname;
+
+
+set inputname  MIN.3;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep      60003;                # last step of previous run
+
+
+constraints on;
+consref BB_fixed.pdb;
+conskfile BB_fixed.pdb;
+conskcol B;
+
+
+minimize 10000

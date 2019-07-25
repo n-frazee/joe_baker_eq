@@ -1,0 +1,18 @@
+source MIN.G.inp
+
+set outputname MIN.6;
+
+outputname     $outputname;
+
+
+set inputname  MIN.5;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep      80005;                # last step of previous run
+
+
+minimize 10000

@@ -1,0 +1,25 @@
+source EQ.G.inp
+
+set outputname EQ.4;
+
+outputName        $outputname;
+
+
+set inputname  EQ.3;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep     2540014;                # last step of previous run
+timestep            2.0;               # fs/step
+
+
+constraints on;
+consref bb4.pdb;
+conskfile bb4.pdb;
+conskcol B;
+
+
+run 500000;

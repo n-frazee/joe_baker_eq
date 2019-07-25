@@ -1,0 +1,64 @@
+# full path and name to your structures
+set psf_name /media/bak12/****/****/****
+set pdb_name /media/bak12/****/****/****
+
+# path to the directory of your parameter
+set param_path /media/bak12/****/****/****
+
+# Stick the list of your individual parameters here; must be in quotes, slashes
+# separate the line
+set param_list [list \
+     "par_all36m_prot.prm" \
+     "par_all36_na.prm" \
+     "par_all36_carb.prm" \
+     "par_all36_lipid.prm" \
+     "par_all36_cgenff.prm" \
+     "toppar_water_ions.str"
+]
+
+# An example from the test run is shown below
+
+
+## full path and name to your structures; here the psf anf pdb are called "test.pdb"
+#set mol_name /media/bak12/nfrazee/teamwork/other_friends/bi_eq/test/test
+#
+## path to the directory of your parameter (like you would get from the pwd command)
+#set param_path /media/bak12/nfrazee/teamwork/other_friends/bi_eq/test/toppar
+#
+## Stick the list of your individual parameters here; must be in quotes, slashes
+## separate the line
+#set param_list [list \
+#     "par_all36m_prot.prm" \
+#     "par_all36_na.prm" \
+#     "par_all36_carb.prm" \
+#     "par_all36_lipid.prm" \
+#     "par_all36_cgenff.prm" \
+#     "toppar_water_ions.str" \
+#     "toppar_dum_noble_gases.str" \
+#     "toppar_all36_prot_d_aminoacids.str" \
+#     "toppar_all36_prot_fluoro_alkanes.str" \
+#     "toppar_all36_prot_heme.str" \
+#     "toppar_all36_prot_na_combined.str" \
+#     "toppar_all36_prot_retinol.str" \
+#     "toppar_all36_na_nad_ppi.str" \
+#     "toppar_all36_na_rna_modified.str" \
+#     "toppar_all36_lipid_bacterial.str" \
+#     "toppar_all36_lipid_cardiolipin.str" \
+#     "toppar_all36_lipid_cholesterol.str" \
+#     "toppar_all36_lipid_inositol.str" \
+#     "toppar_all36_lipid_lps.str" \
+#     "toppar_all36_lipid_miscellaneous.str" \
+#     "toppar_all36_lipid_model.str" \
+#     "toppar_all36_lipid_prot.str" \
+#     "toppar_all36_lipid_pyrophosphate.str" \
+#     "toppar_all36_lipid_sphingo.str" \
+#     "toppar_all36_lipid_yeast.str" \
+#     "toppar_all36_lipid_hmmm.str" \
+#     "toppar_all36_lipid_detergent.str" \
+#     "toppar_all36_lipid_ether.str" \
+#     "toppar_all36_carb_glycolipid.str" \
+#     "toppar_all36_carb_glycopeptide.str" \
+#     "toppar_all36_carb_imlab.str" \
+#     "toppar_all36_label_spin.str" \
+#     "toppar_all36_label_fluorophore.str" \
+#]

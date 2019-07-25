@@ -1,0 +1,28 @@
+source MIN.G.inp
+
+set temp           0;
+set outputname MIN.1;
+
+outputname     $outputname;
+
+temperature        $temp;
+
+
+firsttimestep      0;                # last step of previous run
+
+
+# Periodic Boundary conditions.
+cellBasisVector1     insert_dx_here   0.0   0.0;   # vector to the next image
+cellBasisVector2    0.0    insert_dy_here   0.0;
+cellBasisVector3    0.0   0.0    insert_dz_here;
+cellOrigin          insert_cx_here   insert_cy_here    insert_cz_here;   # the *center* of the cell
+
+
+# applying the contrants to the files
+constraints on;
+consref ION_WATER_ONLY.pdb; # the file that is used for postions
+conskfile ION_WATER_ONLY.pdb; #file used for constraint
+conskcol B;  #column for constraint
+
+
+minimize 20000

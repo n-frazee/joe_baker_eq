@@ -1,0 +1,44 @@
+source         HEAT.G.inp
+
+
+set outputname HEAT.3;
+
+outputname     $outputname;
+
+
+set inputname  HEAT.2;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep     290008;                # last step of previous run
+
+
+# Pressure and volume control
+useGroupPressure       yes;            # use a hydrogen-group based pseudo-mol$
+                                       # has less fluctuation, is needed for ri$
+
+
+# Pistion Parameters
+LangevinPiston on;
+LangevinPistonTarget 1.01325;
+LangevinPistonPeriod 400;
+LangevinPistonDecay 200;
+
+
+constraints on;
+consref bb3.pdb;
+conskfile bb3.pdb;
+conskcol B;
+
+
+for {set i 201} { $i <= 250 } {incr i} {
+stochRescaleTemp $i;
+
+
+LangevinPistonTemp $i;
+
+run 2000;
+}

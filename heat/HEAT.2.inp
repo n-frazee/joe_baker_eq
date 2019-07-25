@@ -1,0 +1,29 @@
+source         HEAT.G.inp
+
+
+set outputname HEAT.2;
+
+outputName        $outputname; # base name for output from this run
+
+
+set inputname  HEAT.1;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep       140007;                # last step of previous run
+
+constraints on;
+consref bb2.pdb;
+conskfile bb2.pdb;
+conskcol B;
+
+
+for {set i 51} { $i <= 200 } {incr i} {
+
+stochRescaleTemp $i;
+
+run 1000;
+}

@@ -1,0 +1,27 @@
+source         HEAT.G.inp
+
+
+set outputname HEAT.1;
+
+outputname     $outputname;
+
+
+set inputname  ../min/MIN.6;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+                  # in the format of first-dyn.coor and first-dyn.vel
+firsttimestep    90006;                # last step of previous run
+
+
+
+# temp loop from 1 to 50 works by running every degree until 50K
+
+for {set i 26} { $i <= 50 } {incr i} {
+stochRescaleTemp $i;
+
+run 2000;
+}

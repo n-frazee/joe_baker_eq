@@ -1,0 +1,25 @@
+source EQ.G.inp
+
+set outputname EQ.1;
+
+outputName        $outputname;
+
+
+set inputname  ../heat/HEAT.5;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep     540011;              # last step of previous run
+timestep            1.0;               # fs/step
+
+
+constraints on;
+consref bb1.pdb;
+conskfile bb1.pdb;
+conskcol B;
+
+
+run 1000000;

@@ -1,0 +1,24 @@
+source MIN.G.inp
+
+set outputname MIN.2;
+
+outputname     $outputname;
+
+
+set inputname  MIN.1;
+
+binCoordinates $inputname.coor;
+binVelocities  $inputname.vel;
+extendedSystem $inputname.xsc;
+
+
+firsttimestep      20001;                # last step of previous run
+
+
+constraints on;
+consref LIPID_ONLY.pdb;
+conskfile LIPID_ONLY.pdb;
+conskcol B;
+
+
+minimize 20000
