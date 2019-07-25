@@ -5,7 +5,8 @@
 @Last modified time: 2019-04-11T16:05:52-04:00
 -->
 # joe_baker_eq
-###############################################################################
+
+## How to use this code
 
 To apply this procedure to your system you will need to modify two files in
 this directory:
@@ -19,14 +20,14 @@ Once you have modified these files equilibration can be started with:
 
 executed from the command line in this folder.
 
-###############################################################################
+## What's going on in the code?
 
 This folder and its contents are a series of scripts designed to implement the
 Joe Baker protocol for the equilibration of lipid bilayers. The protocol is as
 follows:
 
 
-Minimization
+### Minimization
 1. 20,000 steps with only water and ions free, 500 kcal/mol Å2 constraint on
      everything else
 2. 20,000 steps with lipids free, 500 kcal/mol Å2 constraint on everything else
@@ -36,7 +37,7 @@ Minimization
 5. 10,000 steps with alpha carbons constrained using 20 kcal/mol Å2
 6. 10,000 steps with everything free
 
-Heating
+### Heating
 1. 50 ps, heating to 50 K, no constraints, 1 fs time step
 2. 150 ps, heating to 200 K, backbone constrained with 20 kcal/mol Å2
 3. 100 ps, heating to 250 K, backbone constrained with 20 kcal/mol Å2, with
@@ -46,18 +47,20 @@ Heating
      time of 100 fs
 5. Final 50 ps heating step from 300 K to 310 K, backbone constrained
 
-Equilibration (P = 1 atm,T = 310 K)
+### Equilibration (P = 1 atm,T = 310 K)
 1. 1 ns, with 20 kcal/mol Å2 constraint
 2. 1 ns, with 10 kcal/mol Å2 constraint (switch to 2 fs time step)
 3. 1 ns, with 5 kcal/mol Å2 constraint
 4. 1 ns, with 1 kcal/mol Å2 constraint
 
-###############################################################################
+
 
 The system of directories is split up by the three headers above (min, heat,
 eq) and each step under the heading corresponds to one of the .inp files and
 the output names for the simulation files and .log file for that step.
 
+
+## Data Gathered during EQ
 Some data for the system prep is automatically pulled out from the log files of
 the various steps; this is stored the prep_data directory with associated
 gnuplot scripts listed here:
@@ -66,18 +69,14 @@ gnuplot scripts listed here:
      min_energy_split.gp - same as min_energy.gp but splits into 6 plots: 1 for
           each step
      heat_temperature.gp - plots the temperature
-
 and more to come later...
 
-To run gnuplot (for those not in the know) simply type "gnuplot" into your
-command line. After that, execute
-     load "<insert name of script here>"
-inside gnuplot's console.
+To load the plots symply execute in gnuplot:
 
-###############################################################################
+     gnuplot> load "<insert name of script here>"
 
 
-Changelog:
+## Changelog
 
 1.0.0 - og release
 1.0.1 - fixed error reading in parameters
