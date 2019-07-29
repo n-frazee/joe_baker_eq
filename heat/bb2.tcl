@@ -1,7 +1,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-10T16:18:33-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-04-10T17:53:28-04:00
+# @Last modified time: 2019-07-29T14:19:46-04:00
 # @Comment:
 
 
@@ -15,7 +15,7 @@ source ../user.inp
 
 ###########LOADING FILES######################################################
 
-set my_psf ${mol_name}.psf
+set my_psf $psf_name
 mol load psf $my_psf
 mol addfile HEAT.1.dcd mol 0
 #################################only backbone constraint############################################

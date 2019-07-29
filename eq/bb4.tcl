@@ -1,7 +1,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-09T16:00:18-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-04-10T17:48:08-04:00
+# @Last modified time: 2019-07-29T14:24:52-04:00
 # @Comment:
 
 
@@ -17,7 +17,7 @@ source ../user.inp
 
 ###########LOADING FILES######################################################
 
-set my_psf ${mol_name}.psf
+set my_psf $psf_name
 mol load psf $my_psf
 mol addfile EQ.3.dcd mol 0
 #################################only backbone constraint############################################

@@ -1,7 +1,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-10T14:45:56-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-04-10T17:18:33-04:00
+# @Last modified time: 2019-07-29T14:09:57-04:00
 # @Comment:
 
 
@@ -14,7 +14,7 @@ source ../user.inp
 ###########LODING FILES######################################################
 # add in the location and the file for the pdb and psf you want to use
 set my_dcd MIN.4.dcd
-set my_psf $mol_name.psf
+set my_psf $psf_name
 # loads in the files
 mol load psf $my_psf dcd $my_dcd
 set all [atomselect top all frame last]

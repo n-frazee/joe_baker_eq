@@ -1,7 +1,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-10T14:45:56-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-04-10T17:58:01-04:00
+# @Last modified time: 2019-07-29T14:10:15-04:00
 # @Comment:
 
 
@@ -12,8 +12,8 @@
 source ../user.inp
 ###########LODING FILES######################################################
 # add in the location and the file for the pdb and psf you want to use
-set my_pdb $mol_name.pdb
-set my_psf $mol_name.psf
+set my_pdb $pdb_name
+set my_psf $psf_name
 # loads in the files
 mol load psf $my_psf pdb $my_pdb
 set all [atomselect top all]
