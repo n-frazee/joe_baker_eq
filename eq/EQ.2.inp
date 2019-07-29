@@ -12,7 +12,7 @@ binVelocities  $inputname.vel;
 extendedSystem $inputname.xsc;
 
 
-firsttimestep     1540012 ;                # last step of previous run
+firsttimestep     1540000 ;                # last step of previous run
 timestep            2.0;               # fs/step
 
 

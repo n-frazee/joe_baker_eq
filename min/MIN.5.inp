@@ -12,7 +12,7 @@ binVelocities  $inputname.vel;
 extendedSystem $inputname.xsc;
 
 
-firsttimestep      70004;                # last step of previous run
+firsttimestep      70000;                # last step of previous run
 
 
 constraints on;

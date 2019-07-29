@@ -12,7 +12,7 @@ extendedSystem $inputname.xsc;
 
 
 
-firsttimestep     490010;                # last step of previous run
+firsttimestep     490000;                # last step of previous run
 
 # Pressure and volume control
 useGroupPressure       yes;            # use a hydrogen-group based pseudo-mol$

@@ -13,7 +13,7 @@ binVelocities  $inputname.vel;
 extendedSystem $inputname.xsc;
 
 
-firsttimestep     290008;                # last step of previous run
+firsttimestep     290000;                # last step of previous run
 
 
 # Pressure and volume control

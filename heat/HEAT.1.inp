@@ -14,7 +14,7 @@ extendedSystem $inputname.xsc;
 
 
                   # in the format of first-dyn.coor and first-dyn.vel
-firsttimestep    90006;                # last step of previous run
+firsttimestep    90000;                # last step of previous run
 
 
 

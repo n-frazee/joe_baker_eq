@@ -2,7 +2,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-09T16:06:35-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-07-15T12:38:46-04:00
+# @Last modified time: 2019-07-29T14:35:07-04:00
 # @Comment: make it easy to reinitialize; check each step has finished before proceeding
 
 
@@ -106,6 +106,7 @@ sed -i "s/insert_cy_here/$cy/g" MIN.1.inp
 sed -i "s/insert_cz_here/$cz/g" MIN.1.inp
 
 restarter () {
+	prefix=$1; next=$2
 	if [ $(( $(grep firsttimestep $next.inp |grep -o '[0-9]\+') -1)) -ne $(grep STEP $prefix.log |tail -n 1 |grep -o '[0-9]\+') ]; then
 		temp=$(grep "Rescale" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
 		step=$(grep "STEP" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
@@ -114,21 +115,21 @@ restarter () {
 		echo ""
 		echo "Failed on $prefix.inp. Last step restart was written: $step. Last temperature: $temp.
 		Do you want to restart from here? (y/n)"; read continue
-		if [ $continue = "y" ]; then
+		#if [ $continue = "y" ]; then
 
-		else
+		#else
 
-		fi
+		#fi
 
 	fi
 }
 
 
 
-sh config.sh output_file_name "inputname" "outputname" "temperture"
-
-cat template.dat > output_file_name
-sed -i
+#sh config.sh output_file_name "inputname" "outputname" "temperture"
+#
+#cat template.dat > output_file_name
+#sed -i
 
 # Iterate through the minimization steps
 for i in $(seq 1 5); do
