@@ -2,7 +2,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-09T16:06:35-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-07-29T14:35:07-04:00
+# @Last modified time: 2019-07-31T15:34:45-04:00
 # @Comment: make it easy to reinitialize; check each step has finished before proceeding
 
 
@@ -105,24 +105,24 @@ sed -i "s/insert_cx_here/$cx/g" MIN.1.inp
 sed -i "s/insert_cy_here/$cy/g" MIN.1.inp
 sed -i "s/insert_cz_here/$cz/g" MIN.1.inp
 
-restarter () {
-	prefix=$1; next=$2
-	if [ $(( $(grep firsttimestep $next.inp |grep -o '[0-9]\+') -1)) -ne $(grep STEP $prefix.log |tail -n 1 |grep -o '[0-9]\+') ]; then
-		temp=$(grep "Rescale" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
-		step=$(grep "STEP" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
-		echo ""
-		echo "###+-----------------------------------------------------------------------+###"
-		echo ""
-		echo "Failed on $prefix.inp. Last step restart was written: $step. Last temperature: $temp.
-		Do you want to restart from here? (y/n)"; read continue
-		#if [ $continue = "y" ]; then
-
-		#else
-
-		#fi
-
-	fi
-}
+#restarter () {
+#	prefix=$1; next=$2
+#	if [ $(( $(grep firsttimestep $next.inp |grep -o '[0-9]\+') -1)) -ne $(grep STEP $prefix.log |tail -n 1 |grep -o '[0-9]\+') ]; then
+#		temp=$(grep "Rescale" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
+#		step=$(grep "STEP" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
+#		echo ""
+#		echo "###+-----------------------------------------------------------------------+###"
+#		echo ""
+#		echo "Failed on $prefix.inp. Last step restart was written: $step. Last temperature: $temp.
+#		Do you want to restart from here? (y/n)"; read continue
+#		#if [ $continue = "y" ]; then
+#
+#		#else
+#
+#		#fi
+#
+#	fi
+#}
 
 
 
@@ -145,9 +145,6 @@ done
 
 # Last minimization doesn't use constraints
 $namd_location MIN.6.inp > MIN.6.log
-next=$(($i+1))
-# test if the current step has finished
-if [ $(( $(grep firsttimestep HEAT.1.inp |grep -o '[0-9]\+') -1)) -ne $(grep STEP MIN.6.log |tail -n 1 |grep -o '[0-9]\+') ]; then
 
 
 # Make a file with the energy information
