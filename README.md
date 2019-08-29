@@ -8,16 +8,18 @@
 
 ## How to use this code
 
-To apply this procedure to your system you will need to modify two files in this directory:
+To apply this procedure to your system you will need to modify a file in this directory:
 
-     run_all.sh (the execution script)
      user.inp (a list of parameters common to all the .tcl scripts)
 
 Once you have modified these files equilibration can be started with:
 
      sh run_all.sh
 
-executed from the command line in this folder.
+followed by command line arguments detailed by executing
+
+     sh run_all.sh -h
+
 
 ## What's going on in the code?
 

@@ -2,7 +2,7 @@
 # @Author: nfrazee
 # @Date:   2019-04-09T16:06:35-04:00
 # @Last modified by:   nfrazee
-# @Last modified time: 2019-07-31T15:34:45-04:00
+# @Last modified time: 2019-08-05T11:28:04-04:00
 # @Comment: make it easy to reinitialize; check each step has finished before proceeding
 
 
@@ -107,7 +107,7 @@ sed -i "s/insert_cz_here/$cz/g" MIN.1.inp
 
 #restarter () {
 #	prefix=$1; next=$2
-#	if [ $(( $(grep firsttimestep $next.inp |grep -o '[0-9]\+') -1)) -ne $(grep STEP $prefix.log |tail -n 1 |grep -o '[0-9]\+') ]; then
+#	if [ $(grep firsttimestep $next.inp |grep -o '[0-9]\+') -ne $(grep STEP $prefix.log |tail -n 1 |grep -o '[0-9]\+') ]; then
 #		temp=$(grep "Rescale" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
 #		step=$(grep "STEP" $prefix.log |tail -n 1 |grep -o '[0-9]\+')
 #		echo ""
@@ -115,11 +115,11 @@ sed -i "s/insert_cz_here/$cz/g" MIN.1.inp
 #		echo ""
 #		echo "Failed on $prefix.inp. Last step restart was written: $step. Last temperature: $temp.
 #		Do you want to restart from here? (y/n)"; read continue
-#		#if [ $continue = "y" ]; then
+#		if [ $continue = "y" ]; then
 #
-#		#else
+#		else
 #
-#		#fi
+#		fi
 #
 #	fi
 #}
